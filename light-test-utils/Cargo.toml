@@ -1,0 +1,46 @@
+[package]
+name = "light-test-utils"
+version = "0.2.1"
+description = "Utilities used in Light Protocol program tests"
+repository = "https://github.com/Lightprotocol/light-protocol"
+license = "Apache-2.0"
+edition = "2021"
+
+[features]
+default = []
+
+[dependencies]
+anchor-lang = "=0.29.0"
+anchor-spl = "=0.29.0"
+anyhow = "1.0"
+ark-ff = "0.4"
+light-hash-set = { version = "0.2.1" }
+num-bigint = "0.4"
+num-traits = "0.2"
+solana-program-test = "=1.18.11"
+solana-sdk = "=1.18.11"
+solana-client = "=1.18.11"
+thiserror = "1.0"
+light-macros = { version = "0.4.1" }
+account-compression = { version = "0.4.1", features = ["cpi"] }
+light-compressed-token = { version = "0.4.1", features = ["cpi"] }
+light-system-program = { version = "0.4.1", features = ["cpi"] }
+light-registry = { version = "0.4.1", features = ["cpi"] }
+spl-token = { version = "=4.0.0", features = ["no-entrypoint"] }
+solana-transaction-status = "=1.18.11"
+tokio = "1.38"
+light-prover-client = { version = "0.2.1" }
+reqwest = "0.11.26"
+light-hasher = { version = "0.2.1" }
+light-merkle-tree-reference = { version = "0.2.1" }
+light-concurrent-merkle-tree = { version = "0.2.1" }
+light-indexed-merkle-tree = { version = "0.2.1" }
+light-verifier = { version = "0.2.1" }
+light-utils = { version = "0.2.1" }
+memoffset = "0.9.1"
+rand = "0.8"
+photon-api = { version = "0.28.1" }
+log = "0.4"
+
+[dev-dependencies]
+rand = "0.8"

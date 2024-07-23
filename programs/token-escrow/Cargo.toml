@@ -1,0 +1,44 @@
+[package]
+name = "token-escrow"
+version = "0.2.1"
+description = "Solana escrow implementation using account compression"
+repository = "https://github.com/Lightprotocol/light-protocol"
+license = "Apache-2.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "token_escrow"
+
+[features]
+no-entrypoint = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+custom-heap = []
+default = ["custom-heap", "idl-build"]
+test-sbf = []
+idl-build = ["anchor-lang/idl-build", "anchor-spl/idl-build"]
+
+[dependencies]
+anchor-lang = { version = "=0.29.0", features = ["init-if-needed"] }
+light-compressed-token = { version = "0.4.1", features = ["cpi"]}
+light-system-program = { version = "0.4.1", features = ["cpi"]}
+account-compression = { version = "0.4.1",  features = ["cpi"] }
+light-hasher = { version = "0.2.1" }
+light-verifier = { version = "0.2.1" }
+light-sdk = { path = "../../light-sdk", version = "0.2.1", features = ["cpi"] }
+
+[target.'cfg(not(target_os = "solana"))'.dependencies]
+solana-sdk = "=1.18.11"
+
+[dev-dependencies]
+solana-program-test = "=1.18.11"
+light-test-utils = { path = "../../light-test-utils", version = "0.2.1" }
+reqwest = "0.12"
+tokio = "1.38.0"
+light-prover-client = { version = "0.2.1" }
+num-bigint = "0.4.6"
+num-traits = "0.2.18"
+spl-token = "=4.0.0"
+anchor-spl = "=0.29.0"
+

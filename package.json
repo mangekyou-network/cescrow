@@ -1,0 +1,25 @@
+{
+  "scripts": {
+    "lint:fix": "prettier \"*/**/*{.js,.ts}\" -w",
+    "lint": "prettier  \"*/**/*{.js,.ts}\" --check",
+    "test": "cargo test-sbf -p token-escrow -- --test-threads=1",
+    "dev": "ts-node app/api/actions/compressed-escrow/route.ts"
+  },
+  "dependencies": {
+    "@coral-xyz/anchor": "0.29.0",
+    "@solana/actions": "^1.1.2",
+    "@solana/spl-token": "^0.4.8",
+    "@solana/web3.js": "^1.95.0"
+  },
+  "devDependencies": {
+    "chai": "5.1.1",
+    "mocha": "^10.6.0",
+    "ts-mocha": "^10.0.0",
+    "@types/bn.js": "^5.1.5",
+    "@types/chai": "^4.3.16",
+    "@types/mocha": "^10.0.7",
+    "typescript": "^5.5.3",
+    "prettier": "^3.3.3"
+  },
+  "packageManager": "pnpm@7.13.4+sha512.65a3f9f8f4735c8d20e0a8a353bcf1e218bb45425c49804921bf747be9724de432470f75fa9789a0503359aeb7fb87e3248cfa0aa63470d90feedad95e1e65f3"
+}
